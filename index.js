@@ -1,6 +1,7 @@
 const fs = require('fs');
 const { Client, Intents, ClientUser, Collection } = require('discord.js');
 const wait = require('util').promisify(setTimeout);
+const { token } = require('./token.json');
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 client.commands = new Collection();
@@ -66,4 +67,4 @@ client.on('messageCreate', async (message) => {
     }
 });
 
-client.login('OTIzNTc1NzI1Mzk3Nzc4NDUy.YcSA7A.0QR1JLdUFF7wOEU-twfiCdQzvpg');
+client.login(token);
